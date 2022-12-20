@@ -1,0 +1,13 @@
+{
+  "title": "title",
+  "section1": "Long Form",
+  "section2": "Short Form",
+  "sections": ["SLOs", "SLIs", "SLAs"],
+  "slos": {
+    "latency": "7ms",
+    "availability": "99.5%"
+  },
+  "slas": {
+    "availability": "99.0%"
+  }
+}
