@@ -20,4 +20,16 @@ An example document using \LaTeX, Python, and Jinja.
 %% endfor
 \end{itemize}
 
+\BLOCK{ for section in sections }
+\section{\VAR{section}}
+\BLOCK{ endfor }
+
+Currently our SLOs are:
+
+\BLOCK{ for k,v in slos.items() }
+\VAR{k}: \VAR{v}
+\BLOCK{ endfor }
+
+This reaches the end users as an availability SLA of \VAR{slas.get('availability')}
+
 \end{document}
