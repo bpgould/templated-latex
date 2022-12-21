@@ -4,6 +4,7 @@
 2. install the dependencies in `requirements.txt`
 3. run the `test.py` file
 4. `out.tex` is produced which can then be compiled to pdf using something like pdflatex or another python package
+5. If you have Miktex or another latex compiler set up and accessible in your path you can run a command such as `pdflatex -synctex=1 -interaction=nonstopmode "out".tex` in your terminal and the PDF will be output in the local directory
 
 This is a powerful technique for generating lots of pretty PDFs using JSON or some other data source.
 
