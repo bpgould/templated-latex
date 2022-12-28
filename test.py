@@ -1,7 +1,7 @@
 """
 Small test python script to use Jinja2 templates
 for dynamically generating tex files that can be
-compiles to pdf files. I will adapt this for
+compiled to pdf files. I will adapt this for
 creating org-wide SLI/SLO/SLA docs for my SRE team
 """
 import json
@@ -10,6 +10,7 @@ import subprocess
 from jinja2 import Environment
 from jinja2 import FileSystemLoader
 
+# dictionary of characters to replace from json config file
 replace_chars = {"%": "\\%"}
 
 with open("template.json", encoding="utf-8") as json_file:
@@ -60,7 +61,7 @@ def get_recursively(search_dict, replacement_map):
     return search_dict
 
 
-# Driver Code
+# recursively iterate over nth child of json and replace illegal substrings
 
 result = get_recursively(template_dict, replace_chars)
 
@@ -80,7 +81,6 @@ latex_jinja_env = Environment(
 
 template = latex_jinja_env.get_template("jinja-test.tex")
 
-# output_tex = template.render(section1="Long Form", section2="Short Form")
 output_tex = template.render(result)
 
 # print to console
